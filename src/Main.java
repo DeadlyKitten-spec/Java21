@@ -3,6 +3,7 @@ import javafx.beans.property.Property;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;21
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -14,37 +15,38 @@ public class Main {
     public static void main(String[] args) throws IOException {
         File file = new File("26.txt");
         Scanner scan = new Scanner(file);
-        int n = scan.nextInt();
-        int[] array = new int[n];
-        int itterEven = 0;
-        for (int i = 0; i < n; i++) {
-            array[i] = scan.nextInt();
-            if(array[i] % 2 == 0){
-                itterEven++;
-            }
-        }
-        Arrays.sort(array);
-        int[] arrayEven = new int[itterEven];
-        itterEven = 0;
-        for (int i = 0; i < n; i++) {
-            if(array[i] % 2 == 0){
-                arrayEven[itterEven] = array[i];
-                itterEven++;
-            }
-        }
-        int max = 0;
-        int count = 0;
-        for (int i = 0; i < arrayEven.length; i++) {
-            for (int j = i + 1; j < arrayEven.length - 1; j++) {
-                if(binSearch(array, 0, array.length - 1, ((arrayEven[i] + arrayEven[j]) / 2)) != -1){
-                    count++;
-                    if(max < (arrayEven[i] + arrayEven[j]) / 2) {
-                        max = (arrayEven[i] + arrayEven[j]) / 2;
-                    }
-                }
-            }
-        }
-        System.out.println(max + " " + count);
+//        int n = scan.nextInt();
+//        int[] array = new int[n];
+//        int itterEven = 0;
+//        for (int i = 0; i < n; i++) {
+//            array[i] = scan.nextInt();
+//            if(array[i] % 2 == 0){
+//                itterEven++;
+//            }
+//        }
+//        Arrays.sort(array);
+//        int[] arrayEven = new int[itterEven];
+//        itterEven = 0;
+//        for (int i = 0; i < n; i++) {
+//            if(array[i] % 2 == 0){
+//                arrayEven[itterEven] = array[i];
+//                itterEven++;
+//            }
+//        }
+//        int max = 0;
+//        int count = 0;
+//        for (int i = 0; i < arrayEven.length; i++) {
+//            for (int j = i + 1; j < arrayEven.length - 1; j++) {
+//                if(binSearch(array, 0, array.length - 1, ((arrayEven[i] + arrayEven[j]) / 2)) != -1){
+//                    count++;
+//                    if(max < (arrayEven[i] + arrayEven[j]) / 2) {
+//                        max = (arrayEven[i] + arrayEven[j]) / 2;
+//                    }
+//                }
+//            }
+//        }
+//        System.out.println(max + " " + count);
+        System.out.println("Hello git!");
 
 //        int n = scan.nextInt();
 //        int sumEven = 0;
